@@ -9,7 +9,10 @@ Persona::Persona()
       perimetros(),
       paniculos(),
       composicionCorporalPlicometro(pesoyAltura, perimetros,
-                          diametros, paniculos)
+                          diametros, paniculos),
+      factoract(),
+      superavitdef(),
+      gastoEKmCardle(0,0,factoract, superavitdef)
 {
 
 }
@@ -41,6 +44,17 @@ void Persona::calculaComposicionCorporalPlicometro()
     composicionCorporalPlicometro.setPerimetros(this->perimetros);
     composicionCorporalPlicometro.setPaniculos(this->paniculos);
     composicionCorporalPlicometro.hacerCalculos();
+}
+
+void Persona::calculaTasaMetabolicaKmCardle(double porcentajegraso,
+                                            double pesoenKilogramos)
+{
+    gastoEKmCardle.setPorcentajeGraso(porcentajegraso);
+    gastoEKmCardle.setPeso(pesoenKilogramos);
+    gastoEKmCardle.setFactorAct(factoract);
+    gastoEKmCardle.setSupDef(superavitdef);
+    gastoEKmCardle.calculaTasaMetabolicaBasal(gastoEKmCardle.getPorcentajeGraso(),
+                                     gastoEKmCardle.getPeso());
 }
 
 

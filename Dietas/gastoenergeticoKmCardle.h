@@ -7,25 +7,38 @@
 class GastoEnergeticoKmCardle
 {
 public:
+    friend class Persona;
+
     GastoEnergeticoKmCardle(double porcentajeGraso,
+                            double pesoenKilogramos,
                             FactorActividad factoractividad,
                             SuperativDeficit valorSuperOdeficit);
 
-    FactorActividad getFactorAct() const;
-    SuperativDeficit getSupDef() const;
-    double getPorcentajeGraso() const;
+
+
     double getTasaMetabolicaBasal() const;
     double getGastoEnergeticoTotal() const;
 
+
+
 private:
-    double calculaTasaMetabolicaBasal(double porcentajeGraso, double peso);
+    void calculaTasaMetabolicaBasal(double porcentajeGraso, double pesoenKilogramos);
     double calculaGastoEenergeticoTotal(double superavitodeficit,
                                         double factorAct);
     void setGastoEnergeticoTotal(double value);
     void setTasaMetabolicaBasal(double value);
+
+    double getPorcentajeGraso() const;
     void setPorcentajeGraso(double value);
+
     void setSupDef(const SuperativDeficit &value);
     void setFactorAct(const FactorActividad &value);
+
+    double getPeso() const;
+    void setPeso(double value);
+
+    FactorActividad getFactorAct() const;
+    SuperativDeficit getSupDef() const;
 
     FactorActividad factorAct;
     SuperativDeficit supDef;

@@ -7,6 +7,9 @@
 #include "perimetros.h"
 #include "paniculos.h"
 #include "composicioncorporalPlicometro.h"
+#include "factoractividad.h"
+#include "superativdeficit.h"
+#include "gastoenergeticoKmCardle.h"
 
 class Persona
 {
@@ -21,6 +24,8 @@ public:
     void setSexo(int value);
 
     void calculaComposicionCorporalPlicometro();
+    void calculaTasaMetabolicaKmCardle(double porcentajegraso,
+                                       double pesoenKilogramos);
 
 private:
     std::string nombre;
@@ -32,6 +37,9 @@ public:
     Perimetros perimetros;
     Paniculos paniculos;
     ComposicionCorporalPlicometro composicionCorporalPlicometro;
+    FactorActividad factoract;
+    SuperativDeficit superavitdef;
+    GastoEnergeticoKmCardle gastoEKmCardle;
 
 };
 
