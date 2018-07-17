@@ -51,21 +51,25 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../Dietas/main.cpp \
-		../Dietas/composicioncorporal.cpp \
 		../Dietas/persona.cpp \
 		../Dietas/pesoyaltura.cpp \
 		../Dietas/perimetros.cpp \
 		../Dietas/diametros.cpp \
 		../Dietas/paniculos.cpp \
-		../Dietas/gastoenergetico.cpp 
+		../Dietas/superativdeficit.cpp \
+		../Dietas/composicioncorporalPlicometro.cpp \
+		../Dietas/factoractividad.cpp \
+		../Dietas/gastoenergeticoKmCardle.cpp 
 OBJECTS       = main.o \
-		composicioncorporal.o \
 		persona.o \
 		pesoyaltura.o \
 		perimetros.o \
 		diametros.o \
 		paniculos.o \
-		gastoenergetico.o
+		superativdeficit.o \
+		composicioncorporalPlicometro.o \
+		factoractividad.o \
+		gastoenergeticoKmCardle.o
 DIST          = ../../../../Qt/5.11.0/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt/5.11.0/gcc_64/mkspecs/common/unix.conf \
 		../../../../Qt/5.11.0/gcc_64/mkspecs/common/linux.conf \
@@ -249,20 +253,24 @@ DIST          = ../../../../Qt/5.11.0/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt/5.11.0/gcc_64/mkspecs/features/exceptions.prf \
 		../../../../Qt/5.11.0/gcc_64/mkspecs/features/yacc.prf \
 		../../../../Qt/5.11.0/gcc_64/mkspecs/features/lex.prf \
-		../Dietas/Dietas.pro composicioncorporal.h \
-		persona.h \
+		../Dietas/Dietas.pro persona.h \
 		pesoyaltura.h \
 		perimetros.h \
 		diametros.h \
 		paniculos.h \
-		gastoenergetico.h ../Dietas/main.cpp \
-		../Dietas/composicioncorporal.cpp \
+		factoractividad.h \
+		superativdeficit.h \
+		composicioncorporalPlicometro.h \
+		gastoenergeticoKmCardle.h ../Dietas/main.cpp \
 		../Dietas/persona.cpp \
 		../Dietas/pesoyaltura.cpp \
 		../Dietas/perimetros.cpp \
 		../Dietas/diametros.cpp \
 		../Dietas/paniculos.cpp \
-		../Dietas/gastoenergetico.cpp
+		../Dietas/superativdeficit.cpp \
+		../Dietas/composicioncorporalPlicometro.cpp \
+		../Dietas/factoractividad.cpp \
+		../Dietas/gastoenergeticoKmCardle.cpp
 QMAKE_TARGET  = Dietas
 DESTDIR       = 
 TARGET        = Dietas
@@ -691,22 +699,16 @@ main.o: ../Dietas/main.cpp ../Dietas/persona.h \
 		../Dietas/diametros.h \
 		../Dietas/perimetros.h \
 		../Dietas/paniculos.h \
-		../Dietas/composicioncorporal.h
+		../Dietas/composicioncorporalPlicometro.h \
+		../Dietas/factoractividad.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Dietas/main.cpp
-
-composicioncorporal.o: ../Dietas/composicioncorporal.cpp ../Dietas/composicioncorporal.h \
-		../Dietas/pesoyaltura.h \
-		../Dietas/perimetros.h \
-		../Dietas/diametros.h \
-		../Dietas/paniculos.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o composicioncorporal.o ../Dietas/composicioncorporal.cpp
 
 persona.o: ../Dietas/persona.cpp ../Dietas/persona.h \
 		../Dietas/pesoyaltura.h \
 		../Dietas/diametros.h \
 		../Dietas/perimetros.h \
 		../Dietas/paniculos.h \
-		../Dietas/composicioncorporal.h
+		../Dietas/composicioncorporalPlicometro.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o persona.o ../Dietas/persona.cpp
 
 pesoyaltura.o: ../Dietas/pesoyaltura.cpp ../Dietas/pesoyaltura.h
@@ -721,8 +723,23 @@ diametros.o: ../Dietas/diametros.cpp ../Dietas/diametros.h
 paniculos.o: ../Dietas/paniculos.cpp ../Dietas/paniculos.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o paniculos.o ../Dietas/paniculos.cpp
 
-gastoenergetico.o: ../Dietas/gastoenergetico.cpp ../Dietas/gastoenergetico.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gastoenergetico.o ../Dietas/gastoenergetico.cpp
+superativdeficit.o: ../Dietas/superativdeficit.cpp ../Dietas/superativdeficit.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o superativdeficit.o ../Dietas/superativdeficit.cpp
+
+composicioncorporalPlicometro.o: ../Dietas/composicioncorporalPlicometro.cpp ../Dietas/composicioncorporalPlicometro.h \
+		../Dietas/pesoyaltura.h \
+		../Dietas/perimetros.h \
+		../Dietas/diametros.h \
+		../Dietas/paniculos.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o composicioncorporalPlicometro.o ../Dietas/composicioncorporalPlicometro.cpp
+
+factoractividad.o: ../Dietas/factoractividad.cpp ../Dietas/factoractividad.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o factoractividad.o ../Dietas/factoractividad.cpp
+
+gastoenergeticoKmCardle.o: ../Dietas/gastoenergeticoKmCardle.cpp ../Dietas/gastoenergeticoKmCardle.h \
+		../Dietas/factoractividad.h \
+		../Dietas/superativdeficit.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gastoenergeticoKmCardle.o ../Dietas/gastoenergeticoKmCardle.cpp
 
 ####### Install
 

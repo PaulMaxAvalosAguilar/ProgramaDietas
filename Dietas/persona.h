@@ -6,7 +6,7 @@
 #include "diametros.h"
 #include "perimetros.h"
 #include "paniculos.h"
-#include "composicioncorporal.h"
+#include "composicioncorporalPlicometro.h"
 
 class Persona
 {

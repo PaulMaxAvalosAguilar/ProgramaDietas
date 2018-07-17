@@ -5,19 +5,23 @@ CONFIG -= qt
 
 SOURCES += \
         main.cpp \
-    composicioncorporal.cpp \
     persona.cpp \
     pesoyaltura.cpp \
     perimetros.cpp \
     diametros.cpp \
     paniculos.cpp \
-    gastoenergetico.cpp
+    superativdeficit.cpp \
+    composicioncorporalPlicometro.cpp \
+    factoractividad.cpp \
+    gastoenergeticoKmCardle.cpp
 
 HEADERS += \
-    composicioncorporal.h \
     persona.h \
     pesoyaltura.h \
     perimetros.h \
     diametros.h \
     paniculos.h \
-    gastoenergetico.h
+    factoractividad.h \
+    superativdeficit.h \
+    composicioncorporalPlicometro.h \
+    gastoenergeticoKmCardle.h

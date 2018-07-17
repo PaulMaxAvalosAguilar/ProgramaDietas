@@ -1,4 +1,4 @@
-#include "composicioncorporal.h"
+#include "composicioncorporalPlicometro.h"
 #include <cmath>
 
 ComposicionCorporalPlicometro::ComposicionCorporalPlicometro(PesoyAltura &pyA, Perimetros &p, Diametros &d, Paniculos &pa)

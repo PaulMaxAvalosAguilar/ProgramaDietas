@@ -1,5 +1,5 @@
 #include "persona.h"
-#include "composicioncorporal.h"
+#include "composicioncorporalPlicometro.h"
 
 Persona::Persona()
     :nombre(""),

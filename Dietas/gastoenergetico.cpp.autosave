@@ -1,0 +1,6 @@
+#include "gastoenergeticoKmCardle.h"
+
+GastoEnergeticoKmCardle::GastoEnergeticoKmCardle()
+{
+
+}

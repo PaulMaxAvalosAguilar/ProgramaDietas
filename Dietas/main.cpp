@@ -1,5 +1,6 @@
 #include <iostream>
 #include "persona.h"
+#include "factoractividad.h"
 
 using namespace std;
 
@@ -36,6 +37,8 @@ int main()
 
     cout<<p.composicionCorporalPlicometro.getPorcentajeGraso()<<endl;
     */
+
+
 
     return 0;
 }
